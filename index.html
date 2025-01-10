@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Booking System</title>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      margin: 4px 0;
+    }
+    .button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Production Booking System</h1>
+  <form id="bookingForm">
+    <label>Date: <input type="date" id="date" name="date" class="form-control" readonly></label>
+    <label>Time: <input type="time" id="time" name="time" class="form-control" readonly></label>
+    <label>Shift: 
+      <select id="shift" name="shift" class="form-control select2">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+    </label>
+    <label>Line Leader: 
+      <select id="lineLeader" name="lineLeader" class="form-control select2">
+        <option>Balraj</option>
+        <option>Mohan</option>
+        <option>Rajesh</option>
+      </select>
+    </label>
+    <label>Employee Code: 
+      <select id="employeeCode" name="employeeCode" class="form-control select2">
+        <option>62217</option>
+        <option>64816</option>
+      </select>
+    </label>
+    <label>Model: 
+      <select id="model" name="model" class="form-control select2">
+        <option>TT</option>
+        <option>TLB</option>
+        <option>Uti</option>
+      </select>
+    </label>
+    <label>Machine: 
+      <select id="machine" name="machine" class="form-control select2">
+        <option>133</option>
+        <option>134</option>
+      </select>
+    </label>
+    <label>Variant: 
+      <select id="variant" name="variant" class="form-control select2">
+        <option>UTI HD</option>
+        <option>210</option>
+      </select>
+    </label>
+    <label>Plan: <input type="number" id="plan" name="plan" class="form-control"></label>
+    <label>Actual: <input type="number" id="actual" name="actual" class="form-control"></label>
+    <label>Sr. No.: <input type="text" id="srNo" name="srNo" class="form-control"></label>
+    <label>Hold: <input type="text" id="hold" name="hold" class="form-control"></label>
+    <label>Reason for Hold: <input type="text" id="reasonHold" name="reasonHold" class="form-control"></label>
+    <label>Loss Time: <input type="text" id="lossTime" name="lossTime" class="form-control"></label>
+    <label>Reason for Loss: <input type="text" id="reasonLoss" name="reasonLoss" class="form-control"></label>
+    <label>Tool Change: <input type="text" id="toolChange" name="toolChange" class="form-control"></label>
+    <button type="submit" class="button">Add Booking</button>
+  </form>
+  <h2>Production Bookings</h2>
+  <table id="productionTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Shift</th>
+        <th>Line Leader</th>
+        <th>Employee Code</th>
+        <th>Model</th>
+        <th>Machine</th>
+        <th>Variant</th>
+        <th>Plan</th>
+        <th>Actual</th>
+        <th>Sr. No.</th>
+        <th>Hold</th>
+        <th>Reason for Hold</th>
+        <th>Loss Time</th>
+        <th>Reason for Loss</th>
+        <th>Tool Change</th>
+        <th>OEE</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <button id="downloadBtn" class="button">Download Data (CSV)</button>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
